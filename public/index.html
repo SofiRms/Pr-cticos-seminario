@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suma desde el servidor</title>
+</head>
+
+<body>
+  <div>
+<!-- input para capturar  variables-->
+      <Input type="text" id="suma1" name="suma1" placeholder="ingrese primer número" required>
+      <Input type="text" id="suma2" name="suma2" placeholder="ingrese segundo número" required>
+      <button onclick="sumar()">sumar</button>
+      <p id="resultado"></p>
+
+    <script>
+    //función para sumar
+      function sumar() {
+        let num1 = parseInt(document.getElementById("suma1").value)
+        let num2 = parseInt(document.getElementById("suma2").value)
+        if (isNaN(num1) || isNaN(num2)) {
+          alert("Por favor, ingrese números válidos.");
+          return;
+        }
+//evento resultado de la suma
+        var resultado = document.getElementById("resultado");
+        fetch("/suma?num1=" + num1 + "&num2=" + num2)
+          .then((response) => response.text())
+          .then((data) => (resultado.innerHTML = data))
+          .catch((error) => console.log(error));
+      
+      }
+    </script>
+  </div>
+</body>
+
+</html>
