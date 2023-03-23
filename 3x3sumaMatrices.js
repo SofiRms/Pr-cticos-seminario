@@ -34,7 +34,6 @@ function sumarMatrices() {
       [n31, n32, n33]
     ];
     var resultado = document.getElementById("resultado");
-
     // Sumar las matrices
     var suma = [[], [], []];
     for (var i = 0; i < 3; i++) {
