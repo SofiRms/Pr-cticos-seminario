@@ -1,0 +1,60 @@
+<script>
+
+//declaración de arreglos vacíos
+    let matriz1 = new Array(
+
+    )
+    let matriz2 = new Array(
+
+    )
+//declaración de filas, columnas y profundidad para 2 matrices diferentes
+    let filas1 = parseInt(prompt("ingrese cantidad de filas de matriz 1"));
+    let columnas1 = parseInt(prompt("ingrese cantidad de columnas de matriz 1"));
+    let filas2 = parseInt(prompt("ingrese cantidad de filas de matriz 2"));
+    let columnas2 = parseInt(prompt("ingrese cantidad de columnas de matriz 2"));
+
+//condición triple para que las matrices tengan mismas filas,columnas 
+    if ((filas1 === filas2)&&(columnas1 === columnas2)) {
+        let sumaMatriz = []
+
+//for para recorrer las filas de la matriz 1
+        for (i = 0; i < filas1; i++) {
+            matriz1[i] = []
+//for para recorrer las columnas de la matriz 1
+            for (j = 0; j < columnas1; j++) {
+               
+                matriz1[i][j]= parseInt(prompt(`ingrese número para la posición ${i},${j}`))
+
+
+            }
+        }
+
+//for para recorrer las filas de la matriz 2
+        for (i = 0; i < filas2; i++) {
+            matriz2[i] = []
+//for para recorrer las columnas de la matriz 1
+            for (j = 0; j < columnas2; j++) {
+                matriz2[i][j] = parseInt(prompt(`ingrese número para la posición ${i},${j}`))
+  
+            }
+
+        }
+        for (i = 0; i < matriz1.length; i++) {
+            sumaMatriz[i] = []
+            for (y = 0; y < matriz1.length; y++) {
+                sumaMatriz[i][y] = matriz1[i][y] + matriz2[i][y]
+
+                
+            
+            }
+        }
+        alert("resultado en consola")
+        console.table(matriz1)
+        console.table(matriz2)
+        console.table(sumaMatriz)
+
+    } else {
+        alert("no es posible sumar matrices con diferentes dimensiones")
+    }
+
+</script>

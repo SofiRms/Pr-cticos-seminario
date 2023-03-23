@@ -1,0 +1,86 @@
+ <script>
+    let objectNum = {
+        nombre: "franco",
+        color: "naranja",
+        apellido: "canesin",
+        // saludar(){
+        //     console.log(this.color)
+        // }
+    }
+
+    //💖se llama a la función saludar que está dentro del objeto
+    objectNum.saludar()
+
+    //💖comprobación de que un nombre x ingresado sea igual al nombre(valor) en la clave "nombre" del objeto
+    let name= prompt("ingrese nombre")
+    if(objectNum.nombre==name){
+        console.log(`se llama ${name}`)}
+        else{
+            console.log(`no se llama ${name}`)
+        }
+
+   // 💖uso de operador IN para corrobar la existencia de una propiedad en el objeto
+    if("nombre" in objectNum){
+        console.log("existe")
+    }else{
+        console.log("no existe")
+    }
+
+//💖otra forma de comprobar que una propiedad existe en el objeto: negando su existencia
+    if(!objectNUm.edad){
+        console.log("la propiedad no existe")
+    }else{
+        console.log("existe")
+    }
+
+   // 💖imprimir claves y valores recorriendo el objeto
+   for(let i in objectNum){
+   console.log(i+ ":" +objectNum[i])
+   }
+
+
+
+//💖recorrer un objeto para obtener clave y valor mediante el método entries y un for
+for(const[key, value] of Object.entries(champion)){
+    console.log(key+ ":"+value)}
+
+//💖agrego una clave y valor al objeto mediante notación por punto
+const champion={
+    name: "teemo",
+    region: "Bandle City",
+    description: "The fast explorer",
+    rol: "Top laner",
+    relatedChampions: ["Tristana","Veinar", "Rumble"]
+}
+const objectString= JSON.stringify(champion)
+champion.title= "champion"
+
+//💖agrego una función al objeto como propiedad
+champion.obtener= function(){
+    console.log(this.name+", "+this.region+", "+this.rol)
+}
+
+//💖agrego una propiedad en forma de array
+champion.relatedChampions = ["Tristana","Veiar","Rumble"]
+
+
+//💖este objeto me permite usar sus valores como claves para implementar el for
+const translate={
+    name: "nombre",
+    region: "región",
+    description: "descripción",
+    rol: "rol",
+    relatedChampions: "campeones"
+}
+
+//💖bucle para agregar los valores del objeto translate como claves a los valores del objeto champion
+for (let i in champion){
+    console.log(translate[i]+ ":" +champion[i])
+}
+
+//💖conversión de string
+const item= "{name: 'Tiamat'}";
+const object=JSON.parse(item);
+
+ 
+</script> 

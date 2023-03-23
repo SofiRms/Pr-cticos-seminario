@@ -1,0 +1,63 @@
+<script>
+
+    let matriz1 = new Array(
+
+    );
+    let matriz2 = new Array(
+
+    )
+    let multiplicarMatriz = new Array(
+
+    )
+    let resultado = []
+    let matrizresultado=[]
+    let fila1 = parseInt(prompt("ingrese cantidad de filas de matriz 1"))
+    let columna1 = parseInt(prompt("ingrese cantidad de columnas de matriz 1"))
+    let fila2 = parseInt(prompt("ingrese cantidad de filas de matriz 2"))
+
+    let columna2 = parseInt(prompt("ingrese cantidad de columnas de matriz 2"))
+
+    //function para cargar valores a las matrices mediante argumentos
+    function cargar(array, fila, columna) {
+        for (i = 0; i < fila; i++) {
+            //en esta instancia recorre las filas
+            array[i] = []
+            //for para recorrer las columnas
+            for (j = 0; j < columna; j++) {
+                //aquí se reciben los valores para la posición correspondiente a la fila y columna por cada recorrido
+                array[i][j] = parseInt(prompt(`ingrese número para la posición ${i},${j}`))
+            }
+        }
+        //console.log(array)
+    }
+
+    //paso argumentos a la función para que cargue las matrices declaradas previamente, las filas y las columnas ingresadas
+    cargar(matriz1, fila1, columna1)
+    cargar(matriz2, fila2, columna2)
+
+    //mostrar en forma de tabla las matrices cargadas
+    console.table(matriz1)
+    console.table(matriz2)
+
+    //for para multiplicar fila de la matriz1 por columnas de matriz2
+    function multiplicaMatriz() {
+
+
+        for (i = 0; i < fila1; i++) {
+            matrizresultado[i] = []
+            for (j = 0; j < columna2; j++) {
+                matrizresultado[i][j]=0
+                for (k = 0; k < columna1; k++) {
+                    matrizresultado[i][j]= matriz1[i][k] * matriz2[k][j]
+                }
+            //    resultado[i][j] = contador;
+            }
+        }
+console.log(matrizresultado)
+    }
+    multiplicaMatriz()
+    //let primer_resultado = (matriz1[0][0] * matriz2[0][0]) + (matriz1[0][1] * matriz2[1][0]) + (matriz1[0][2] * matriz2[2][0])
+    //console.log(primer_resultado)
+
+
+</script>

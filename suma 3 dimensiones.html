@@ -1,0 +1,54 @@
+<script>
+
+//declaración de arreglos vacíos
+    let matriz1 = new Array(
+
+    )
+    let matriz2 = new Array(
+
+    )
+    let sumaMatriz=new Array(
+
+    )
+//declaración de filas, columnas y profundidad para 2 matrices diferentes
+    let filas1 = parseInt(prompt("ingrese cantidad de filas de matriz 1"));
+    let columnas1 = parseInt(prompt("ingrese cantidad de columnas de matriz 1"));
+    let profundidad1 = parseInt(prompt("ingrese profundidad de matriz 1"))
+    let filas2 = parseInt(prompt("ingrese cantidad de filas de matriz 2"));
+    let columnas2 = parseInt(prompt("ingrese cantidad de columnas de matriz 2"));
+    let profundidad2 = parseInt(prompt("ingrese profundidad de matriz 2"))
+
+
+//function para cargar matrices mediante argumentos
+function cargar(array,fila, columna,profundidad){
+    for (i = 0; i < fila; i++) {
+            array[i] = []
+//for para recorrer las columnas de la matriz 1
+            for (j = 0; j < columna; j++) {
+                array[i][j] = []
+//for para recorrer la profundidad
+                for (k = 0; k < profundidad; k++) {
+                    array[i][j][k] = parseInt(prompt(`ingrese número para la posición ${i},${j},${k}`))
+
+                }
+                
+            }
+        }
+        console.log(array)
+    }
+    cargar(matriz1, filas1,columnas1,profundidad1)
+    cargar(matriz2, filas2,columnas2,profundidad2)
+
+        for (i = 0; i < matriz1.length; i++) {
+            sumaMatriz[i] = []
+            for (y = 0; y < matriz1.length; y++) {
+                sumaMatriz[i][y]=[]
+                for(k=0;k<matriz1.length;k++){
+                sumaMatriz[i][y][k] = matriz1[i][y][k] + matriz2[i][y][k]
+            }
+            }
+        }
+        console.table(sumaMatriz)
+
+  
+</script>
