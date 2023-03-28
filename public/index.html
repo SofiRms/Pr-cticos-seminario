@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiplicación de matrices</title>
+</head>
+<body>
+  <h1>Multiplicación de matrices</h1>
+  <form method="POST" action="/multiply-matrices">
+    <label for="matrix1-rows">Número de filas de la matriz 1:</label>
+    <input type="number" id="matrix1-rows" name="matrix1Rows">
+    <label for="matrix1-cols">Número de columnas de la matriz 1:</label>
+    <input type="number" id="matrix1-cols" name="matrix1Cols">
+    <br>
+    <label for="matrix2-rows">Número de filas de la matriz 2:</label>
+    <input type="number" id="matrix2-rows" name="matrix2Rows">
+    <label for="matrix2-cols">Número de columnas de la matriz 2:</label>
+    <input type="number" id="matrix2-cols" name="matrix2Cols">
+    <br>
+    <label for="matrix1-data">Datos de la matriz 1:</label>
+    <br>
+    <textarea id="matrix1-data" name="matrix1Data"></textarea>
+    <br>
+    <label for="matrix2-data">Datos de la matriz 2:</label>
+    <br>
+    <textarea id="matrix2-data" name="matrix2Data"></textarea>
+    <br>
+    <button type="submit">Multiplicar matrices</button>
+  </form>
+</body>
+</html>
