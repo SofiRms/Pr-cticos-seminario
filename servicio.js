@@ -29,6 +29,6 @@ app.post('/sumar_matrices', (req, res) => {
 
 
 
-app.listen(5500, () => {
-  console.log('Servidor escuchando en el puerto 5500');
+app.listen(5000, () => {
+  console.log('Servidor escuchando en el puerto 5000');
 });
