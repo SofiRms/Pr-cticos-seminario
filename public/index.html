@@ -8,11 +8,7 @@
 
 <body>
   <h1>Suma de matrices</h1>
-<<<<<<< HEAD
   <!-- 💕método post para el envio de los datos- puerto y ruta en donde se encuentra la función del servidor -->
-=======
-<!-- 💕método post para el envio de los datos- puerto y ruta en donde se encuentra la función del servidor -->
->>>>>>> 0fc68d59a52d325f7bdf1e44a7903dffdcdd1334
   <form method="post" action="http://localhost:5000/sumar_matrices">
     <label for="filas1">Filas de la matriz 1:</label>
     <input type="number" id="filas1" name="filas1"><br>
@@ -26,24 +22,16 @@
     <label for="columnas2">Columnas de la matriz 2:</label>
     <input type="number" id="columnas2" name="columnas2"><br>
     <h2>Matriz 1</h2>
-<<<<<<< HEAD
     <!-- 🌹este id se usa para enviarlo como parámetro en la función que arma las tablas y luego se envian los inputs al servidor -->
-=======
-<!-- 🌹este id se usa para enviarlo como parámetro en la función que arma las tablas y luego se envian los inputs al servidor -->
->>>>>>> 0fc68d59a52d325f7bdf1e44a7903dffdcdd1334
     <div id="matrix1"></div>
     <h2>Matriz 2</h2>
     <div id="matrix2"></div>
-    <input type="submit" name="submit" id="btnsubmit" style="display: none;">
+    <input type="submit" id="btnsubmit" name="submit"  style="display: none;">
     <input type="button" id="btncomprobar" value="comprobar" onclick="validarMatrices()">
   </form>
 
   <script>
-<<<<<<< HEAD
     //💖función que grafica las mastrices, requiere 3 parámetros  para construir las tablas 
-=======
-//💖función que grafica las mastrices, requiere 3 parámetros  para construir las tablas 
->>>>>>> 0fc68d59a52d325f7bdf1e44a7903dffdcdd1334
     function crearInputs(idDiv, filas, columnas) {
       //id del Div en donde se construirán las tablas
       let div = document.getElementById(idDiv);
@@ -54,11 +42,7 @@
         let fila = document.createElement('div');
 
         for (let j = 0; j < columnas; j++) {
-<<<<<<< HEAD
           //💕creación de los inputs de tipo number para cada fila en cada columna
-=======
-//💕creación de los inputs de tipo number para cada fila en cada columna
->>>>>>> 0fc68d59a52d325f7bdf1e44a7903dffdcdd1334
           let input = document.createElement('input');
           input.type = 'number';
           input.name = idDiv + '[' + i + '][' + j + ']';
@@ -74,31 +58,27 @@
       let filas1 = parseInt(document.getElementById('filas1').value);
       let columnas1 = parseInt(document.getElementById('columnas1').value);
 
-      //  crearInputs('matrix1', filas1, columnas1);
     });
 
     document.getElementById('columnas1').addEventListener('input', function () {
       let filas1 = parseInt(document.getElementById('filas1').value);
       let columnas1 = parseInt(document.getElementById('columnas1').value);
 
-      //crearInputs('matrix1', filas1, columnas1);
+
     });
 
     document.getElementById('filas2').addEventListener('input', function () {
       let filas2 = parseInt(document.getElementById('filas2').value);
       let columnas2 = parseInt(document.getElementById('columnas2').value);
 
-      //crearInputs('matrix2', filas2, columnas2);
     });
 
     document.getElementById('columnas2').addEventListener('input', function () {
       let filas2 = parseInt(document.getElementById('filas2').value);
       let columnas2 = parseInt(document.getElementById('columnas2').value);
 
-      //crearInputs('matrix2', filas2, columnas2);
     });
 
-<<<<<<< HEAD
     //💖función que evalúa las dimensiones de las matrices antes de enviarlas al servidor
 
     function validarMatrices() {
@@ -110,9 +90,11 @@
       if (fila1 === fila2 && columna1 === columna2) {
 
         document.getElementById('btncomprobar').click
+      //parámetros de las matrices para construir los inputs
         crearInputs("matrix1", fila1, columna1)
         crearInputs("matrix2", fila2, columna2)
         
+        //esconder boton de comprobación
         document.getElementById('btncomprobar').style.display = "none"
         document.getElementById('btnsubmit').style.display=""
         document.getElementById('btnsubmit').style.marginLeft = "500px"
@@ -122,25 +104,6 @@
       }
     }
 
-=======
-//💖función que evalúa las dimensiones de las matrices antes de enviarlas al servidor
-const enviar = (e)=>{
-//
-  e.preventDefault();
-   if (matrix1.length === parseInt(document.getElementById('filas2').value) && matrix1[0].length===parseInt(document.getElementById('columnas2').value)) {
-    
-    fetch("/sumar_matrices", {
-                method: "POST",
-                body: JSON.stringify({
-                    'matrix1':matrix1,
-                    'matrix2':matrix2}),
-                headers: {'content-Type':'application/json'}
-            }).then(response=>console.log(response)).catch(e=>console.log(e))
-    }else {
-   console.log("Las matrices no tienen las mismas dimensiones")
-  }
-}
->>>>>>> 0fc68d59a52d325f7bdf1e44a7903dffdcdd1334
 
   </script>
 </body>
