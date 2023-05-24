@@ -1,4 +1,4 @@
-// Create a simple model.
+// Crear modelo
 const model = tf.sequential();
 
 
@@ -15,14 +15,14 @@ async function Execute() {
     // Prepare the model for training: Specify the loss and the optimizer.
     model.compile({ loss: 'meanSquaredError', optimizer: 'sgd' });
 
-    // Generate some synthetic data for training.Function que debe predecir (y = 2x - 1)
-    //la 2da dimension se interpreta: 6 posiciones  en 1 dimension
+    //Function que debe predecir (y = 2x +8 )
+    //6 posiciones  en 1 dimension
 
-    const tensorX = tf.tensor2d([-2, -1, 0, 1, 2, 3, 4], [7, 1]);
-    const tensorY = tf.tensor2d([-4, -1, 2, 5, 8, 11, 14], [7, 1])
+    const tensorX = tf.tensor2d([-3,-2, -1, 0, 1, 2, 3], [7, 1]);
+    const tensorY = tf.tensor2d([2, 4, 6, 8, 10, 12,14], [7, 1])
 
 
-    // Train the model using the data.
+    //Carga del modelo
     await model.fit(tensorX, tensorY, { epochs: epocas });
 
     const history = await model.fit(tensorX, tensorY, {
@@ -38,7 +38,7 @@ async function Execute() {
     // Imprimir la pérdida final
     console.log(`Final Loss: ${history.history.loss[epocas - 1].toFixed(4)}`);
 
-    alert("termino de entrenar");
+    alert("termino de entrenar. Oprima predecir");
 
 
 }
