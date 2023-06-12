@@ -1,0 +1,24 @@
+table {
+  border-collapse: collapse;
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
+  background-color: aquamarine;
+  border: 2px solid black;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+tr:not(:last-child) {
+  border-bottom: 2px solid grey;
+}
+
+td:not(:last-child) {
+  border-right: 2px solid grey;
+}
